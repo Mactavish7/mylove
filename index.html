@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizim Hikâyemiz ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .counter {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button {
+            background: white;
+            color: #ff4f7a;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+      .card {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Hoş geldin aşkım ❤️</h1>
+        <p>
+            Eğer bunu okuyorsan, sana küçük ama kalpten gelen  
+            bir sürpriz hazırladım.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Biz ne zamandır “biz”iz? ⏳</h2>
+        <div class="counter" id="timeTogether"></div>
+    </div>
+
+    <div class="card">
+        <h2>Sana küçük bir not 💌</h2>
+        <p>
+            Hayatıma girdiğin günden beri  
+            her şey daha güzel, daha anlamlı.  
+            İyi ki varsın, iyi ki benimlesin.
+        </p>
+    </div>
+
+    <div class="card">
+        <button onclick="showSurprise()">Son sürprizi görmek ister misin? 🎁</button>
+        <p id="surprise" class="hidden">
+            Seni çok seviyorum ❤️  
+            Bu sadece bir site değil,  
+            benim sana olan sevgimin küçük bir yansıması.
+        </p>
+    </div>
+
+    <script>
+        // BURAYA İLK TANIŞMA TARİHİNİ GİR
+        const startDate = new Date("2024-01-15"); // örnek
+
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+            document.getElementById("timeTogether").innerText =
+                `${days} gün ${hours} saat ${minutes} dakika ❤️`;
+        }
+
+            function showSurprise() {
+    document.getElementById("surprise").classList.remove("hidden");
+
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+
+        updateCounter();
+        setInterval(updateCounter, 60000);
+        
+        function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+document.addEventListener("click", () => {
+    for (let i = 0; i < 8; i++) {
+        setTimeout(createHeart, i * 150);
+    }
+});
+
+
+
+
+    </script>
+
+</body>
+</html>
