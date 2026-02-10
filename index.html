@@ -1,260 +1,224 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emir❤️Selin</title>
-    <style>
-<button onclick="document.getElementById('muzik').play()">
-    🎵Bizim Şarkımız
-</button>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emir ❤️ Selin</title>
 
-<audio id="muzik">
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-       body {
+<style>
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   min-height: 100vh;
   color: #333;
+  text-align: center;
 }
 
-        .card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 25px;
-            margin: 20px auto;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-        }
-
-        h1 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
+/* Kartlar */
+.card {
+  background: rgba(255,255,255,0.18);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 380px;
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease forwards;
 }
 
-p {
+/* Yazılar (küçültülmüş) */
+.card h1 { font-size: 22px; }
+.card h2 { font-size: 18px; }
+.card p  { font-size: 14px; line-height: 1.5; }
+
+.counter {
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-        .counter {
-            font-size: 20px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        button {
+/* Buton */
+button {
   background: #ff5f7e;
   color: white;
   border: none;
-  padding: 12px 22px;
-  font-size: 15px;
+  padding: 10px 18px;
+  font-size: 14px;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
-
 button:hover {
   background: #ff3f65;
   transform: scale(1.05);
 }
-        .hidden {
-            display: none;
-        }
-        .heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 20px;
-    animation: floatUp 8s linear infinite;
-    opacity: 0.7;
-}
 
-@keyframes floatUp {
-    from {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-    to {
-        transform: translateY(-110vh);
-        opacity: 0;
-    }
-}
-      .card {
-    animation: fadeUp 1s ease forwards;
-}
+.hidden { display: none; }
 
+/* Fade animasyonu */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-
-    </style>
-<style>
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-}
-</style>
-
-</head>
-<script>
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.innerHTML = "🤍";
-  heart.style.position = "fixed";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.top = "-20px";
-  heart.style.fontSize = "20px";
-  heart.style.animation = "fall 5s linear";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 5000);
-}, 200);
-
-</script>
-
-<style>
+/* Düşen beyaz kalpler */
 @keyframes fall {
   to {
     transform: translateY(110vh);
     opacity: 0;
   }
 }
+.click-heart {
+  position: fixed;
+  font-size: 22px;
+  animation: popUp 1.2s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-80px);
+    opacity: 0;
+  }
+}
+.click-rise-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 22px;
+  animation: riseUp 2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes riseUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+
 </style>
+</head>
 
 <body>
 
-    <div class="card">
-        <h1>Hooşgeldiinnn aşkıım ❤️</h1>
-        <p>
-            Hatırlıyor musun bi proje ile uğraşıyorum demiştim.Evet:D o proje işte buydu.Tüm bunları hazırlarken şuan sen bunu okurken neler hissedeceğini ne kadar mutlu olacağını düşünmekten içim kıpır kıpır oluyor.
-<br>MUTLULUĞUNU GÖRMEK BENİ DAHA ÇOK MUTLU EDİYOR ÇÜNKÜÜ...
-        </p>
-    </div>
+<div class="card">
+  <h1>Hoşgeldinn aşkıım ❤️</h1>
+  <p>
+    Hatırlıyor musun bir proje yapıyorum demiştim…  
+    İşte o proje buydu.  
+    Okurken yüzünde bir gülümseme olsun diye yaptım 🤍
+  </p>
+</div>
 
-    <div class="card">
-        <h2>Ne Zamandır Birlikteyiizz⏳</h2>
-        <div class="counter" id="timeTogether"></div>
-    </div>
+<div class="card">
+  <h2>Ne Zamandır Birlikteyiz ⏳</h2>
+  <div class="counter" id="timeTogether"></div>
+</div>
 
-    <div class="card">
-        <h2>Sana küçük bir not 💌</h2>
-        <p>
-            Hayatıma girdiğin günden beri  
-            her şey daha güzel, daha anlamlı.  
-            İyi ki varsın, iyi ki benimlesin.
-            <br>Seni çok seviyoruum ela gözlüm...
-        </p>
-    </div>
+<div class="card">
+  <h2>Sana küçük bir not 💌</h2>
+  <p>
+    Hayatıma girdiğin günden beri  
+    her şey daha güzel.  
+    İyi ki varsın, iyi ki benimlesin.
+  </p>
+</div>
 
-    <div class="card">
-        <button onclick="showSurprise()">Son sürprizi görmek ister misin? 🎁</button>
-        <p id="surprise" class="hidden">
-            Seni çok seviyorum ❤️  
-            Bu sadece bir site değil,  
-            benim sana olan sevgimin küçük bir yansıması.
-        </p>
-    </div>
+<div class="card">
+  <button onclick="showSurprise()">Son sürprizi görmek ister misin? 🎁</button>
+  <p id="surprise" class="hidden">
+    Seni çok seviyorum ❤️  
+    Bu site benim sana olan sevgimin küçük bir parçası.
+  </p>
+</div>
 
-    <script>
-        // BURAYA İLK TANIŞMA TARİHİNİ GİR
-        const startDate = new Date("2025-12-17"); // örnek
-
-        function updateCounter() {
-            const now = new Date();
-            const diff = now - startDate;
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-            document.getElementById("timeTogether").innerText =
-                `${days} gün ${hours} saat ${minutes} dakika ❤️`;
-        }
-
-            function showSurprise() {
-    document.getElementById("surprise").classList.remove("hidden");
-
-    for (let i = 0; i < 15; i++) {
-        setTimeout(createHeart, i * 100);
-    }
-}
-
-
-        updateCounter();
-        setInterval(updateCounter, 60000);
-        
-        function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
-}
-
-document.addEventListener("click", () => {
-    for (let i = 0; i < 8; i++) {
-        setTimeout(createHeart, i * 150);
-    }
-});
-
-
-
-
-    </script>
-
-
-
-</body>
-<button id="musicBtn" onclick="toggleMusic()"
-        style="position:fixed; bottom:20px; right:20px; padding:10px 15px; font-size:16px;">
-    ▶️ Bizim Müziğimiz
+<!-- Müzik Butonu -->
+<button id="musicBtn"
+onclick="toggleMusic()"
+style="position:fixed; bottom:20px; right:20px;">
+▶️ Bizim Müziğimiz
 </button>
 
 <audio id="bgm">
-    <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function toggleMusic() {
-    const music = document.getElementById("bgm");
-    const btn = document.getElementById("musicBtn");
+// ❄️ Düşen beyaz kalpler
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerText = "🤍";
+  heart.style.position = "fixed";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = "-20px";
+  heart.style.fontSize = "20px";
+  heart.style.animation = "fall 6s linear";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 180);
 
-    if (music.paused) {
-        music.play();
-        btn.innerHTML = "⏸️ Bizim Müziğimiz";
-    } else {
-        music.pause();
-        btn.innerHTML = "▶️ Bizim Müziğimiz";
-    }
+// ⏳ Sayaç
+const startDate = new Date("2025-12-17");
+
+function updateCounter() {
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff / (1000*60*60)) % 24);
+  const minutes = Math.floor((diff / (1000*60)) % 60);
+
+  document.getElementById("timeTogether").innerText =
+    `${days} gün ${hours} saat ${minutes} dakika ❤️`;
 }
-</script>
+updateCounter();
+setInterval(updateCounter, 60000);
+
+// 🎁 Sürpriz
+function showSurprise() {
+  document.getElementById("surprise").classList.remove("hidden");
+}
+
+// 🎵 Müzik
+function toggleMusic() {
+  const music = document.getElementById("bgm");
+  const btn = document.getElementById("musicBtn");
+
+  if (music.paused) {
+    music.play();
+    btn.innerHTML = "⏸️ Bizim Müziğimiz";
+  } else {
+    music.pause();
+    btn.innerHTML = "▶️ Bizim Müziğimiz";
+  }
+}
+
+document.addEventListener("click", (e) => {
+  for (let i = 0; i < 7; i++) {
+    const heart = document.createElement("div");
+    heart.className = "click-rise-heart";
+    heart.innerText = "❤️";
+    heart.style.left = (Math.random() * 100) + "vw";
+    heart.style.animationDuration = (3 + Math.random()*2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2500);
+  }
+});
+
 
 </script>
 
-<audio id="bgm">
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
+</body>
 </html>
 
