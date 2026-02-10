@@ -6,7 +6,7 @@
     <title>Emir❤️Selin</title>
     <style>
 <button onclick="document.getElementById('muzik').play()">
-    🎵 Müziği Aç
+    🎵Bizim Şarkımız
 </button>
 
 <audio id="muzik">
@@ -100,7 +100,43 @@ button:hover {
 
 
     </style>
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+</style>
+
 </head>
+<script>
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerHTML = "🤍";
+  heart.style.position = "fixed";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = "-20px";
+  heart.style.fontSize = "20px";
+  heart.style.animation = "fall 5s linear";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}, 200);
+
+</script>
+
+<style>
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+</style>
+
 <body>
 
     <div class="card">
@@ -188,10 +224,11 @@ document.addEventListener("click", () => {
     </script>
 
 
+
 </body>
-<button onclick="toggleMusic()"
+<button id="musicBtn" onclick="toggleMusic()"
         style="position:fixed; bottom:20px; right:20px; padding:10px 15px; font-size:16px;">
-    🎵 Müzik
+    ▶️ Bizim Müziğimiz
 </button>
 
 <audio id="bgm">
@@ -201,13 +238,18 @@ document.addEventListener("click", () => {
 <script>
 function toggleMusic() {
     const music = document.getElementById("bgm");
+    const btn = document.getElementById("musicBtn");
 
     if (music.paused) {
         music.play();
+        btn.innerHTML = "⏸️ Bizim Müziğimiz";
     } else {
         music.pause();
+        btn.innerHTML = "▶️ Bizim Müziğimiz";
     }
 }
+</script>
+
 </script>
 
 <audio id="bgm">
@@ -215,3 +257,4 @@ function toggleMusic() {
 </audio>
 
 </html>
+
