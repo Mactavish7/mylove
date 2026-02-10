@@ -9,7 +9,11 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+ background:
+  radial-gradient(circle at top, rgba(255,255,255,0.35), transparent 60%),
+  linear-gradient(180deg, #1f1c2c, #928dab);
+
+
   min-height: 100vh;
   color: #333;
   text-align: center;
@@ -24,6 +28,8 @@ body {
   max-width: 380px;
   backdrop-filter: blur(10px);
   animation: fadeUp 1s ease forwards;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
 }
 
 /* Yazılar (küçültülmüş) */
@@ -112,31 +118,47 @@ button:hover {
 <div class="card">
   <h1>Hoşgeldinn aşkıım ❤️</h1>
   <p>
-    Hatırlıyor musun bir proje yapıyorum demiştim…  
-    İşte o proje buydu.  
-    Okurken yüzünde bir gülümseme olsun diye yaptım 🤍
+    Sen bunu okurken yüzünde küçük bir gülümseme varsa,
+    sanırım başardım demek.Yaptığım her hareketim,
+    her davranışım sen mutlu ol diye. Çünkü senin mutluluğunu
+    görmek beni daha da çok mutlu ediyor.Tek bir saç teline 
+    kıyamam.Sana çok değer verdiğimi sakın unutmaaaa veee
+               SENİİ ÇOOOK SEVİYORUUUUMM 🤍
   </p>
 </div>
 
 <div class="card">
   <h2>Ne Zamandır Birlikteyiz ⏳</h2>
   <div class="counter" id="timeTogether"></div>
+<small style="opacity:0.8; font-size:13px;">
+  Ve her geçen dakika seni daha çok seviyorum…
+</small>
+
 </div>
 
 <div class="card">
   <h2>Sana küçük bir not 💌</h2>
   <p>
     Hayatıma girdiğin günden beri  
-    her şey daha güzel.  
-    İyi ki varsın, iyi ki benimlesin.
+    her şey daha güzel.Her şey daha 
+    anlamlı... <br>
+    İyi ki varsın,iyiki hayatımdasın
+    iyi ki benimlesin. <br>
+    SENİ COK SEVİYORUM ELA GÖZLÜM...
   </p>
 </div>
 
 <div class="card">
   <button onclick="showSurprise()">Son sürprizi görmek ister misin? 🎁</button>
   <p id="surprise" class="hidden">
-    Seni çok seviyorum ❤️  
-    Bu site benim sana olan sevgimin küçük bir parçası.
+    SESLENSEM DUYAR MI Kİ? <br>
+    Nereden Nerelere kadar geldik bir bak suanki halimize:) <br>
+    Hergün dua ediyorum hayatıma girip güzelliğin ile 
+    güzelleştirdiğin için...<br>
+    He şey bu arada buraya kadar okudun sence de kocamaaan
+    bir öpücük ile sımsıkı sarılmayı haketmedim mii.... <br>
+                   ❤️❤️❤️❤️❤️❤️❤️ <br>
+                    🤍🤍🤍🤍🤍🤍
   </p>
 </div>
 
@@ -185,7 +207,22 @@ setInterval(updateCounter, 60000);
 // 🎁 Sürpriz
 function showSurprise() {
   document.getElementById("surprise").classList.remove("hidden");
+
+  // Son sürprizde ekstra kalpler
+  for (let i = 0; i < 25; i++) {
+    setTimeout(() => {
+      const heart = document.createElement("div");
+      heart.className = "click-rise-heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (6 + Math.random()) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7000);
+    }, i * 120);
+  }
 }
+
 
 // 🎵 Müzik
 function toggleMusic() {
@@ -207,7 +244,7 @@ document.addEventListener("click", (e) => {
     heart.className = "click-rise-heart";
     heart.innerText = "❤️";
     heart.style.left = (Math.random() * 100) + "vw";
-    heart.style.animationDuration = (3 + Math.random()*2) + "s";
+    heart.style.animationDuration = (6 + Math.random()) + "s";
     document.body.appendChild(heart);
 
     setTimeout(() => {
