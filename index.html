@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emir❤️Selin</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<button onclick="document.getElementById('muzik').play()">
+    🎵 Müziği Aç
+</button>
+
+<audio id="muzik">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+       body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  min-height: 100vh;
+  color: #333;
+}
+
         .card {
             background: rgba(255,255,255,0.15);
             border-radius: 20px;
@@ -21,31 +29,39 @@
             max-width: 400px;
             backdrop-filter: blur(10px);
         }
+
         h1 {
-            font-size: 28px;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
         .counter {
             font-size: 20px;
             margin-top: 10px;
             font-weight: bold;
         }
         button {
-            background: white;
-            color: #ff4f7a;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-        button:hover {
-            opacity: 0.9;
-        }
+  background: #ff5f7e;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff3f65;
+  transform: scale(1.05);
+}
         .hidden {
             display: none;
         }
@@ -96,7 +112,7 @@
     </div>
 
     <div class="card">
-        <h2>Ne Zamandır Birlikteyiiss⏳</h2>
+        <h2>Ne Zamandır Birlikteyiizz⏳</h2>
         <div class="counter" id="timeTogether"></div>
     </div>
 
@@ -171,5 +187,31 @@ document.addEventListener("click", () => {
 
     </script>
 
+
 </body>
+<button onclick="toggleMusic()"
+        style="position:fixed; bottom:20px; right:20px; padding:10px 15px; font-size:16px;">
+    🎵 Müzik
+</button>
+
+<audio id="bgm">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function toggleMusic() {
+    const music = document.getElementById("bgm");
+
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+</script>
+
+<audio id="bgm">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 </html>
